@@ -1,0 +1,23 @@
+
+
+b) Analisis de eventos
+device_status         estado1  estado2
+mission device_type                   
+mision1 dispositivo1      1.0      2.0
+        dispositivo2      1.0      NaN
+mision2 dispositivo1      1.0      2.0
+        dispositivo2      1.0      2.0
+
+c) Gestion de desconexiones
+Empty DataFrame
+Columns: []
+Index: []
+
+d) Consolidacion de misiones
+Series([], )
+
+e) Calculo de porcentajes
+device_type  dispositivo1  dispositivo2
+mission                                
+mision1              30.0          10.0
+mision2              30.0          30.0

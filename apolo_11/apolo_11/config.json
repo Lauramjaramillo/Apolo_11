@@ -1,0 +1,14 @@
+{
+  "output_path": "./devices",
+  "devices": ["Satelites", "Naves", "Trajes", "Vehiculos"],
+  "missions": {
+      "OrbitOne": "ORBONE",
+      "ColonyMoon": "CLNM",
+      "VacMars": "TMRS",
+      "GalaxyTwo": "GALXONE",
+      "Unknown": "UNKN"
+  },
+  "statuses": ["excellent", "good", "warning", "faulty", "killed", "unknown"],
+  "time_sleep": 20,
+  "num_files_range": [1, 100]
+}

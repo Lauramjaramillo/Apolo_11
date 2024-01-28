@@ -1,0 +1,48 @@
+
+
+b) Analisis de eventos
+device_status                                     excellent  faulty  good  killed  unknown  warning
+mission                              device_type                                                   
+9493701e-b85a-4e98-8a88-f845681c1670 unknown            NaN     NaN   NaN     NaN     14.0      NaN
+ColonyMoon                           Naves              NaN     NaN   NaN     2.0      1.0      NaN
+                                     Satelites          1.0     2.0   1.0     1.0      NaN      1.0
+                                     Trajes             1.0     NaN   1.0     NaN      NaN      1.0
+                                     Vehiculos          1.0     1.0   NaN     NaN      3.0      1.0
+GalaxyTwo                            Naves              NaN     NaN   NaN     NaN      1.0      NaN
+                                     Satelites          1.0     1.0   1.0     NaN      2.0      1.0
+                                     Trajes             1.0     2.0   NaN     NaN      NaN      1.0
+                                     Vehiculos          NaN     NaN   2.0     NaN      NaN      3.0
+OrbitOne                             Naves              1.0     NaN   1.0     3.0      NaN      NaN
+                                     Satelites          1.0     2.0   NaN     NaN      2.0      NaN
+                                     Trajes             2.0     NaN   NaN     1.0      1.0      NaN
+                                     Vehiculos          1.0     3.0   1.0     NaN      1.0      NaN
+VacMars                              Naves              NaN     2.0   NaN     1.0      2.0      2.0
+                                     Satelites          2.0     1.0   NaN     NaN      NaN      NaN
+                                     Trajes             NaN     NaN   3.0     2.0      NaN      1.0
+                                     Vehiculos          NaN     NaN   1.0     1.0      2.0      NaN
+
+c) Gestion de desconexiones
+device_type                           Naves  Satelites  Trajes  Vehiculos  unknown
+mission                                                                           
+9493701e-b85a-4e98-8a88-f845681c1670    NaN        NaN     NaN        NaN     14.0
+ColonyMoon                              1.0        NaN     NaN        3.0      NaN
+GalaxyTwo                               1.0        2.0     NaN        NaN      NaN
+OrbitOne                                NaN        2.0     1.0        1.0      NaN
+VacMars                                 2.0        NaN     NaN        2.0      NaN
+
+d) Consolidacion de misiones
+mission
+9493701e-b85a-4e98-8a88-f845681c1670    14
+ColonyMoon                              10
+GalaxyTwo                                6
+OrbitOne                                13
+VacMars                                 11
+
+e) Calculo de porcentajes
+device_type                              Naves  Satelites    Trajes  Vehiculos    unknown
+mission                                                                                  
+9493701e-b85a-4e98-8a88-f845681c1670       NaN        NaN       NaN        NaN  15.909091
+ColonyMoon                            3.409091   6.818182  3.409091   6.818182        NaN
+GalaxyTwo                             1.136364   6.818182  4.545455   5.681818        NaN
+OrbitOne                              5.681818   5.681818  4.545455   6.818182        NaN
+VacMars                               7.954545   3.409091  6.818182   4.545455        NaN
