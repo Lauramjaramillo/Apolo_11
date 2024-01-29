@@ -162,6 +162,20 @@ class DataGenerator:
         """
         self.__config_loader: ConfigLoader = config_loader
 
+    @classmethod
+    def from_config_path(cls, config_path: str) -> 'DataGenerator':
+        """
+        Método de clase para inicializar una instancia de DataGenerator a partir de un archivo de configuración.
+
+        Parameters:
+            config_path (str): Ruta al archivo de configuración (config.json).
+
+        Returns:
+            DataGenerator: Instancia de DataGenerator.
+        """
+        config_loader = ConfigLoader(config_path)
+        return cls(config_loader)
+
     def generate_random_status(self) -> str:
         """
         Genera un estado aleatorio para un dispositivo.
