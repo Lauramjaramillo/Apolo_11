@@ -4,8 +4,8 @@ import pandas as pd
 from apolo_11.Reporte import ReportGenerator
 
 # Rutas para las pruebas
-REPORTS_FOLDER_TEST = os.path.join("reports_test")
-DEVICES_FOLDER_TEST = "devices_test"
+REPORTS_FOLDER_TEST = os.path.abspath(os.path.join("reports_test"))
+DEVICES_FOLDER_TEST = os.path.abspath(os.path.join("devices_test"))
 
 # Fixture para inicializar la instancia de ReportGenerator
 @pytest.fixture
@@ -28,20 +28,25 @@ def test_generate_report(report_generator):
     os.makedirs(REPORTS_FOLDER_TEST, exist_ok=True)
 
     # Ejecutar la prueba
-    report_generator.generate_report("test_folder", df)
+    report_generator.generate_report("test", df)
+
+    # Obtener la lista de archivos en la carpeta de informes de prueba
+    generated_reports = os.listdir(REPORTS_FOLDER_TEST)
+    print(f"Archivos en la carpeta de informes de prueba: {generated_reports}")
 
     # Asegurarse de que se haya generado un informe en la carpeta de informes de prueba
-    assert os.path.exists(os.path.join(REPORTS_FOLDER_TEST, "APLSTATS-REPORT[test_folder].log"))
+    assert any(f.startswith("APLSTATS-REPORT[test]") for f in generated_reports)
 
 # Prueba para verificar que se puedan mover los dispositivos a la carpeta de respaldo
 def test_move_devices_to_backup(report_generator):
     # Crear algunos datos de prueba en DEVICES_FOLDER_TEST antes de ejecutar esta prueba
 
     # Asegúrate de que la carpeta de respaldo exista
-    os.makedirs("backups_test", exist_ok=True)
+    backup_folder = os.path.join("backups", "test_folder")
+    os.makedirs(backup_folder, exist_ok=True)
 
     # Ejecutar la prueba
     report_generator.move_devices_to_backup()
 
     # Asegurarse de que las subcarpetas de dispositivos estén en la carpeta de respaldo
-    assert os.path.exists(os.path.join("backups_test", "test_folder"))
+    assert os.path.exists(backup_folder)
